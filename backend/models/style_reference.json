@@ -1,0 +1,80 @@
+{
+  "sent_len_mean": {
+    "human_median": 20.0,
+    "ai_median": 20.6154,
+    "p05": 10.0393,
+    "p95": 33.4583
+  },
+  "sent_len_std": {
+    "human_median": 6.1757,
+    "ai_median": 4.9441,
+    "p05": 0.0,
+    "p95": 11.8296
+  },
+  "type_token_ratio": {
+    "human_median": 0.6763,
+    "ai_median": 0.6689,
+    "p05": 0.5289,
+    "p95": 0.9048
+  },
+  "hapax_ratio": {
+    "human_median": 0.5187,
+    "ai_median": 0.5161,
+    "p05": 0.3517,
+    "p95": 0.8276
+  },
+  "avg_word_len": {
+    "human_median": 4.8497,
+    "ai_median": 5.181,
+    "p05": 3.9969,
+    "p95": 6.1282
+  },
+  "stopword_ratio": {
+    "human_median": 0.4381,
+    "ai_median": 0.4179,
+    "p05": 0.316,
+    "p95": 0.5512
+  },
+  "punct_density": {
+    "human_median": 0.0276,
+    "ai_median": 0.0228,
+    "p05": 0.0132,
+    "p95": 0.048
+  },
+  "commas_per_sent": {
+    "human_median": 1.0,
+    "ai_median": 1.25,
+    "p05": 0.0,
+    "p95": 2.5675
+  },
+  "noun_ratio": {
+    "human_median": 0.2758,
+    "ai_median": 0.292,
+    "p05": 0.1667,
+    "p95": 0.3909
+  },
+  "verb_ratio": {
+    "human_median": 0.1424,
+    "ai_median": 0.14,
+    "p05": 0.0798,
+    "p95": 0.2063
+  },
+  "adj_ratio": {
+    "human_median": 0.0746,
+    "ai_median": 0.087,
+    "p05": 0.0308,
+    "p95": 0.1429
+  },
+  "adv_ratio": {
+    "human_median": 0.0333,
+    "ai_median": 0.0234,
+    "p05": 0.0,
+    "p95": 0.0784
+  },
+  "pron_ratio": {
+    "human_median": 0.0363,
+    "ai_median": 0.0308,
+    "p05": 0.0,
+    "p95": 0.1333
+  }
+}

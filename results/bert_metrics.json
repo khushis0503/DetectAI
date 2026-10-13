@@ -1,0 +1,214 @@
+{
+  "model": "bert-base-uncased",
+  "smoke_test": false,
+  "hyperparameters": {
+    "max_len": 320,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "max_epochs": 4,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "fp16": true,
+    "early_stopping_patience": 1,
+    "seed": 42
+  },
+  "gpu": "Tesla T4",
+  "n_train": 9309,
+  "n_val": 1334,
+  "n_test": 1335,
+  "train_minutes": 10.5,
+  "best_epoch": 4.0,
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "eval_loss": 0.3553,
+      "eval_accuracy": 0.9078,
+      "eval_f1": 0.9146,
+      "eval_roc_auc": 0.9877
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 0.3842,
+      "eval_accuracy": 0.9198,
+      "eval_f1": 0.9247,
+      "eval_roc_auc": 0.9929
+    },
+    {
+      "epoch": 3.0,
+      "eval_loss": 0.3315,
+      "eval_accuracy": 0.94,
+      "eval_f1": 0.9424,
+      "eval_roc_auc": 0.9948
+    },
+    {
+      "epoch": 4.0,
+      "eval_loss": 0.2717,
+      "eval_accuracy": 0.9558,
+      "eval_f1": 0.9569,
+      "eval_roc_auc": 0.9962
+    }
+  ],
+  "test": {
+    "accuracy": 0.9446,
+    "precision": 0.9151,
+    "recall": 0.9788,
+    "f1": 0.9459,
+    "roc_auc": 0.9927,
+    "per_domain_accuracy": {
+      "Q&A (HC3)": 0.9044,
+      "essay": 0.9231,
+      "reuter": 0.986,
+      "wp": 0.9867
+    },
+    "confusion_matrix": [
+      [
+        614,
+        60
+      ],
+      [
+        14,
+        647
+      ]
+    ]
+  },
+  "robustness": {
+    "accuracy_original": 0.9446,
+    "accuracy_edited": 0.9476,
+    "ai_recall_original": 0.9788,
+    "ai_recall_edited": 0.9849,
+    "accuracy_drop": -0.003
+  },
+  "global_saliency_words": {
+    "AI": [
+      [
+        "sources",
+        0.5061
+      ],
+      [
+        "companies",
+        0.4649
+      ],
+      [
+        "although",
+        0.3033
+      ],
+      [
+        "phone",
+        0.2123
+      ],
+      [
+        "network",
+        0.1782
+      ],
+      [
+        "western",
+        0.1645
+      ],
+      [
+        "women",
+        0.1589
+      ],
+      [
+        "taking",
+        0.1488
+      ],
+      [
+        "introduction",
+        0.1314
+      ],
+      [
+        "themselves",
+        0.1284
+      ],
+      [
+        "african",
+        0.1235
+      ],
+      [
+        "example",
+        0.1231
+      ],
+      [
+        "once",
+        0.1099
+      ],
+      [
+        "love",
+        0.1097
+      ],
+      [
+        "war",
+        0.1068
+      ]
+    ],
+    "human": [
+      [
+        "show",
+        -0.095
+      ],
+      [
+        "type",
+        -0.0692
+      ],
+      [
+        "allows",
+        -0.0512
+      ],
+      [
+        "self",
+        -0.048
+      ],
+      [
+        "someone",
+        -0.0412
+      ],
+      [
+        "data",
+        -0.0407
+      ],
+      [
+        "culture",
+        -0.0404
+      ],
+      [
+        "affect",
+        -0.0373
+      ],
+      [
+        "issue",
+        -0.0361
+      ],
+      [
+        "key",
+        -0.0343
+      ],
+      [
+        "development",
+        -0.0337
+      ],
+      [
+        "communication",
+        -0.0336
+      ],
+      [
+        "critical",
+        -0.0331
+      ],
+      [
+        "shaping",
+        -0.0331
+      ],
+      [
+        "past",
+        -0.0307
+      ]
+    ]
+  },
+  "attention_share_cls": {
+    "[CLS]": 0.0179,
+    "[SEP]": 0.0206,
+    "punctuation": 0.3252,
+    "words": 0.6363
+  },
+  "n_misclassified": 74
+}

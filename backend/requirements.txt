@@ -1,0 +1,20 @@
+# DetectAI backend - tested versions (Python 3.13, Windows, CPU only)
+# CPU-only PyTorch wheels (much smaller download than the GPU version)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.143.0
+uvicorn==0.54.0
+pydantic==2.14.1
+numpy==2.5.4
+pandas==3.0.6
+scikit-learn==1.9.1
+joblib==1.6.0
+nltk==3.10.3
+torch==2.14.1
+transformers==5.19.0
+accelerate==1.15.0
+
+# only needed for the training/report scripts
+matplotlib==3.11.2
+python-docx
+python-pptx

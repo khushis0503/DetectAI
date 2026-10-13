@@ -1,0 +1,396 @@
+{
+  "n_train": 9309,
+  "n_train_augmented": 3083,
+  "n_test": 1335,
+  "models": {
+    "BoW + Naive Bayes": {
+      "accuracy": 0.8135,
+      "precision": 0.8179,
+      "recall": 0.8018,
+      "f1": 0.8098,
+      "roc_auc": 0.912,
+      "per_domain_accuracy": {
+        "Q&A (HC3)": 0.6756,
+        "essay": 0.7157,
+        "reuter": 0.965,
+        "wp": 0.9733
+      },
+      "confusion_matrix": [
+        [
+          556,
+          118
+        ],
+        [
+          131,
+          530
+        ]
+      ],
+      "train_seconds": 14.0
+    },
+    "TF-IDF + LR (stopwords removed)": {
+      "accuracy": 0.8697,
+      "precision": 0.8444,
+      "recall": 0.9032,
+      "f1": 0.8728,
+      "roc_auc": 0.9536,
+      "per_domain_accuracy": {
+        "Q&A (HC3)": 0.7511,
+        "essay": 0.8796,
+        "reuter": 0.965,
+        "wp": 0.9467
+      },
+      "confusion_matrix": [
+        [
+          564,
+          110
+        ],
+        [
+          64,
+          597
+        ]
+      ],
+      "train_seconds": 13.6
+    },
+    "TF-IDF + LR (stopwords kept)": {
+      "accuracy": 0.8899,
+      "precision": 0.853,
+      "recall": 0.9395,
+      "f1": 0.8942,
+      "roc_auc": 0.9669,
+      "per_domain_accuracy": {
+        "Q&A (HC3)": 0.8022,
+        "essay": 0.893,
+        "reuter": 0.9685,
+        "wp": 0.9433
+      },
+      "confusion_matrix": [
+        [
+          567,
+          107
+        ],
+        [
+          40,
+          621
+        ]
+      ],
+      "train_seconds": 18.8
+    },
+    "Char n-gram TF-IDF + SVM": {
+      "accuracy": 0.8816,
+      "precision": 0.9548,
+      "recall": 0.7988,
+      "f1": 0.8699,
+      "roc_auc": 0.9562,
+      "per_domain_accuracy": {
+        "Q&A (HC3)": 0.7689,
+        "essay": 0.9331,
+        "reuter": 0.965,
+        "wp": 0.92
+      },
+      "confusion_matrix": [
+        [
+          649,
+          25
+        ],
+        [
+          133,
+          528
+        ]
+      ],
+      "train_seconds": 16.3
+    },
+    "Stylometric + LR": {
+      "accuracy": 0.6622,
+      "precision": 0.6105,
+      "recall": 0.8775,
+      "f1": 0.72,
+      "roc_auc": 0.7595,
+      "per_domain_accuracy": {
+        "Q&A (HC3)": 0.6067,
+        "essay": 0.5418,
+        "reuter": 0.7063,
+        "wp": 0.8233
+      },
+      "confusion_matrix": [
+        [
+          304,
+          370
+        ],
+        [
+          81,
+          580
+        ]
+      ],
+      "train_seconds": 0.1,
+      "feature_weights": {
+        "sent_len_mean": -0.483,
+        "sent_len_std": -0.392,
+        "type_token_ratio": 0.025,
+        "hapax_ratio": -0.173,
+        "avg_word_len": 0.668,
+        "stopword_ratio": 0.102,
+        "punct_density": -0.793,
+        "commas_per_sent": 0.497,
+        "noun_ratio": -0.278,
+        "verb_ratio": -0.058,
+        "adj_ratio": 0.008,
+        "adv_ratio": -0.531,
+        "pron_ratio": 0.187
+      }
+    }
+  },
+  "top_tfidf_words": {
+    "TF-IDF + LR (stopwords removed)": {
+      "human": [
+        [
+          "said",
+          -11.701
+        ],
+        [
+          "et",
+          -6.264
+        ],
+        [
+          "people",
+          -5.764
+        ],
+        [
+          "first",
+          -5.385
+        ],
+        [
+          "hi",
+          -5.1
+        ],
+        [
+          "one",
+          -5.025
+        ],
+        [
+          "would",
+          -5.003
+        ],
+        [
+          "percent",
+          -4.62
+        ],
+        [
+          "much",
+          -4.581
+        ],
+        [
+          "problem",
+          -4.554
+        ],
+        [
+          "thus",
+          -4.319
+        ],
+        [
+          "two",
+          -4.296
+        ],
+        [
+          "done",
+          -4.239
+        ],
+        [
+          "since",
+          -4.116
+        ],
+        [
+          "think",
+          -4.102
+        ]
+      ],
+      "AI": [
+        [
+          "potential",
+          5.611
+        ],
+        [
+          "upon",
+          5.241
+        ],
+        [
+          "upon time",
+          4.602
+        ],
+        [
+          "essay",
+          4.464
+        ],
+        [
+          "introduction",
+          4.328
+        ],
+        [
+          "including",
+          3.859
+        ],
+        [
+          "important",
+          3.589
+        ],
+        [
+          "significant",
+          3.535
+        ],
+        [
+          "impact",
+          3.449
+        ],
+        [
+          "landscape",
+          3.334
+        ],
+        [
+          "named",
+          3.328
+        ],
+        [
+          "leading",
+          3.178
+        ],
+        [
+          "explore",
+          2.982
+        ],
+        [
+          "heart",
+          2.967
+        ],
+        [
+          "crucial",
+          2.96
+        ]
+      ]
+    },
+    "TF-IDF + LR (stopwords kept)": {
+      "human": [
+        [
+          "said",
+          -10.225
+        ],
+        [
+          "the",
+          -9.138
+        ],
+        [
+          "is",
+          -6.448
+        ],
+        [
+          "most",
+          -5.701
+        ],
+        [
+          "et",
+          -5.352
+        ],
+        [
+          "of",
+          -5.12
+        ],
+        [
+          "all",
+          -5.118
+        ],
+        [
+          "then",
+          -4.625
+        ],
+        [
+          "people",
+          -4.535
+        ],
+        [
+          "so",
+          -4.465
+        ],
+        [
+          "out",
+          -4.362
+        ],
+        [
+          "you",
+          -4.261
+        ],
+        [
+          "from",
+          -4.08
+        ],
+        [
+          "percent",
+          -4.018
+        ],
+        [
+          "do",
+          -3.993
+        ]
+      ],
+      "AI": [
+        [
+          "upon",
+          4.589
+        ],
+        [
+          "potential",
+          4.537
+        ],
+        [
+          "these",
+          3.816
+        ],
+        [
+          "it is",
+          3.791
+        ],
+        [
+          "introduction",
+          3.681
+        ],
+        [
+          "once upon",
+          3.673
+        ],
+        [
+          "this essay",
+          3.592
+        ],
+        [
+          "upon time",
+          3.422
+        ],
+        [
+          "including",
+          3.302
+        ],
+        [
+          "essay",
+          3.281
+        ],
+        [
+          "are few",
+          3.262
+        ],
+        [
+          "significant",
+          3.207
+        ],
+        [
+          "their",
+          3.161
+        ],
+        [
+          "named",
+          3.021
+        ],
+        [
+          "important to",
+          2.985
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "n_test": 1335,
+  "n_ai_texts_edited": 661,
+  "edits": [
+    "WordNet synonym replacement (~15% of content words)",
+    "sentence reordering",
+    "filler-word removal"
+  ],
+  "models": {
+    "TF-IDF + LR (stopwords kept)": {
+      "accuracy_original": 0.8899,
+      "accuracy_edited": 0.8936,
+      "accuracy_drop": -0.0037,
+      "ai_recall_original": 0.9395,
+      "ai_recall_edited": 0.947
+    },
+    "Char n-gram TF-IDF + SVM": {
+      "accuracy_original": 0.8816,
+      "accuracy_edited": 0.8914,
+      "accuracy_drop": -0.0097,
+      "ai_recall_original": 0.7988,
+      "ai_recall_edited": 0.8185
+    },
+    "BoW + Naive Bayes": {
+      "accuracy_original": 0.8135,
+      "accuracy_edited": 0.827,
+      "accuracy_drop": -0.0135,
+      "ai_recall_original": 0.8018,
+      "ai_recall_edited": 0.829
+    },
+    "TF-IDF + LR (stopwords removed)": {
+      "accuracy_original": 0.8697,
+      "accuracy_edited": 0.8757,
+      "accuracy_drop": -0.006,
+      "ai_recall_original": 0.9032,
+      "ai_recall_edited": 0.9153
+    },
+    "Stylometric + LR": {
+      "accuracy_original": 0.6622,
+      "accuracy_edited": 0.6682,
+      "accuracy_drop": -0.006,
+      "ai_recall_original": 0.8775,
+      "ai_recall_edited": 0.8896
+    }
+  }
+}

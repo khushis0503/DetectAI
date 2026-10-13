@@ -1,0 +1,16 @@
+{
+  "test_median_words": 111.0,
+  "test_mean_words": 127.0,
+  "test_counts_by_domain": {
+    "Q&A (HC3)": 450,
+    "wp": 300,
+    "essay": 299,
+    "reuter": 286
+  },
+  "bert_val_after_temperature": {
+    "ai_5th_percentile": 0.963,
+    "human_95th_percentile": 0.8866
+  },
+  "misclassified_median_words": 53.5,
+  "case_study_ai_probability_exact": 0.9652
+}

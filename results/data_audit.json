@@ -1,0 +1,106 @@
+{
+  "token_probability_files": {
+    "files_in_logprobs_star_subfolders_of_essay": 2001,
+    "containing_GPT_space_symbol": 2001
+  },
+  "curly_apostrophes_per_1000_words": {
+    "human": 3.326,
+    "ai": 0.307
+  },
+  "hc3_eli5_space_before_punctuation_per_1000_chars": {
+    "human_before": 18.208,
+    "chatgpt_before": 0.014,
+    "human_after": 0.001,
+    "chatgpt_after": 0.002
+  },
+  "hc3_answers_with_literal_backslash_n": {
+    "human": 1,
+    "chatgpt": 3153,
+    "n_human": 58546,
+    "n_chatgpt": 26903
+  },
+  "hc3_answers_with_displaystyle_markup": {
+    "human": 33,
+    "chatgpt": 0
+  },
+  "hc3_words_per_answer_in_final_dataset": {
+    "human_median": 63.0,
+    "chatgpt_median": 61.0,
+    "human_mean": 81.6,
+    "chatgpt_mean": 74.8
+  },
+  "hc3_raw_answer_words_median": {
+    "human": 83.0,
+    "chatgpt": 174.0
+  },
+  "texts_with_reddit_markdown_before_fix": {
+    "human": 303,
+    "ai": 6
+  },
+  "texts_with_markdown_in_final_dataset": 0,
+  "final_counts": {
+    "Q&A (HC3)": {
+      "human": 1500,
+      "chatgpt": 1500
+    },
+    "essay": {
+      "human": 993,
+      "chatgpt": 999
+    },
+    "reuter": {
+      "human": 998,
+      "chatgpt": 907
+    },
+    "wp": {
+      "human": 999,
+      "chatgpt": 999
+    }
+  },
+  "split_counts": {
+    "train": {
+      "human": 3143,
+      "chatgpt": 3083
+    },
+    "val": {
+      "human": 673,
+      "chatgpt": 661
+    },
+    "test": {
+      "human": 674,
+      "chatgpt": 661
+    }
+  },
+  "median_words_by_domain_and_class": {
+    "Q&A (HC3)": {
+      "human": 63.0,
+      "chatgpt": 61.0
+    },
+    "essay": {
+      "human": 154.0,
+      "chatgpt": 159.0
+    },
+    "reuter": {
+      "human": 159.0,
+      "chatgpt": 157.0
+    },
+    "wp": {
+      "human": 145.0,
+      "chatgpt": 146.0
+    }
+  },
+  "wordpiece_tokens_per_text": {
+    "median": 144.0,
+    "p95": 355.0,
+    "max": 514,
+    "share_over_320": 0.116
+  },
+  "wordpiece_example": {
+    "Unbelievably": [
+      "un",
+      "##bel",
+      "##ie",
+      "##va",
+      "##bly"
+    ]
+  }
+}

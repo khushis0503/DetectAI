@@ -1,0 +1,71 @@
+{
+  "model": "Fine-tuned BERT v1 (temperature-scaled)",
+  "cases": [
+    {
+      "case": "20-word opening of a Reuters article",
+      "truth": "human",
+      "n_words": 20,
+      "verdict": "Likely Human",
+      "ai_probability": 0.0285,
+      "confidence": 0.3772,
+      "short_text_warning": true,
+      "seconds": 1.12,
+      "paragraphs": []
+    },
+    {
+      "case": "Casual sentence typed by a team member",
+      "truth": "human",
+      "n_words": 21,
+      "verdict": "Likely Human",
+      "ai_probability": 0.0261,
+      "confidence": 0.3981,
+      "short_text_warning": true,
+      "seconds": 0.53,
+      "paragraphs": []
+    },
+    {
+      "case": "Formal Reuters paragraph (test set)",
+      "truth": "human",
+      "n_words": 133,
+      "verdict": "Likely Human",
+      "ai_probability": 0.0237,
+      "confidence": 0.9527,
+      "short_text_warning": false,
+      "seconds": 1.39,
+      "paragraphs": []
+    },
+    {
+      "case": "ChatGPT essay paragraph (test set)",
+      "truth": "ChatGPT",
+      "n_words": 184,
+      "verdict": "Likely AI",
+      "ai_probability": 0.9802,
+      "confidence": 0.9603,
+      "short_text_warning": false,
+      "seconds": 2.02,
+      "paragraphs": []
+    },
+    {
+      "case": "Half human essay + half ChatGPT essay",
+      "truth": "mixed",
+      "n_words": 503,
+      "verdict": "Uncertain",
+      "ai_probability": 0.501,
+      "confidence": 0.0021,
+      "short_text_warning": false,
+      "seconds": 5.52,
+      "paragraphs": [
+        [
+          "Paragraph 1",
+          0.0259,
+          "Likely Human"
+        ],
+        [
+          "Paragraph 2",
+          0.9804,
+          "Likely AI"
+        ]
+      ]
+    }
+  ]
+}

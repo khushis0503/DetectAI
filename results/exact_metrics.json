@@ -1,0 +1,49 @@
+{
+  "BoW + Naive Bayes": {
+    "accuracy": 0.813483,
+    "precision": 0.817901,
+    "recall": 0.801815,
+    "f1": 0.809778,
+    "fpr_human": 0.175074,
+    "roc_auc": 0.912011
+  },
+  "TF-IDF + LR (stopwords removed)": {
+    "accuracy": 0.869663,
+    "precision": 0.844413,
+    "recall": 0.903177,
+    "f1": 0.872807,
+    "fpr_human": 0.163205,
+    "roc_auc": 0.953622
+  },
+  "TF-IDF + LR (stopwords kept)": {
+    "accuracy": 0.889888,
+    "precision": 0.853022,
+    "recall": 0.939486,
+    "f1": 0.894168,
+    "fpr_human": 0.158754,
+    "roc_auc": 0.966946
+  },
+  "Char n-gram TF-IDF + SVM": {
+    "accuracy": 0.881648,
+    "precision": 0.954792,
+    "recall": 0.79879,
+    "f1": 0.869852,
+    "fpr_human": 0.037092,
+    "roc_auc": 0.95617
+  },
+  "Stylometric + LR": {
+    "accuracy": 0.662172,
+    "precision": 0.610526,
+    "recall": 0.877458,
+    "f1": 0.72005,
+    "fpr_human": 0.548961,
+    "roc_auc": 0.759471
+  },
+  "BERT v1": {
+    "accuracy": 0.944569,
+    "precision": 0.915134,
+    "recall": 0.97882,
+    "f1": 0.945906,
+    "fpr_human": 0.089021
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "main_model": "bert",
+  "main_model_name": "Fine-tuned BERT (bert-base-uncased)",
+  "created": "2026-10-13T18:24:39",
+  "temperature": 2.4549,
+  "validation_log_loss": {
+    "before_temperature": 0.2636,
+    "after_temperature": 0.1462
+  },
+  "thresholds": {
+    "likely_ai": 0.898248,
+    "likely_human": 0.5
+  },
+  "threshold_rule": "chosen on validation: <= 5% of human texts 'Likely AI'; 'Likely Human' needs p <= 0.5 and <= 5% of AI texts below it",
+  "verdict_rates": {
+    "validation": {
+      "human_texts": {
+        "Likely AI": 0.049,
+        "Uncertain": 0.0297,
+        "Likely Human": 0.9212
+      },
+      "ai_texts": {
+        "Likely AI": 0.9728,
+        "Uncertain": 0.0182,
+        "Likely Human": 0.0091
+      }
+    },
+    "test": {
+      "human_texts": {
+        "Likely AI": 0.0623,
+        "Uncertain": 0.0282,
+        "Likely Human": 0.9095
+      },
+      "ai_texts": {
+        "Likely AI": 0.9516,
+        "Uncertain": 0.0272,
+        "Likely Human": 0.0212
+      }
+    }
+  },
+  "ensemble": {
+    "used": false,
+    "weight_main": 1.0,
+    "weight_svm": 0.0,
+    "best_weight_on_validation": 1.0,
+    "validation_roc_auc": {
+      "single": 0.9952,
+      "ensemble": 0.9952
+    },
+    "test_single": {
+      "accuracy": 0.9438,
+      "precision": 0.9138,
+      "recall": 0.9788,
+      "f1": 0.9452,
+      "roc_auc": 0.9907
+    },
+    "test_ensemble": {
+      "accuracy": 0.9438,
+      "precision": 0.9138,
+      "recall": 0.9788,
+      "f1": 0.9452,
+      "roc_auc": 0.9907
+    }
+  }
+}

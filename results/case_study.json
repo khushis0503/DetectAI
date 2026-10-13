@@ -1,0 +1,94 @@
+{
+ "sinus_h": {
+  "text": "Paranasal sinuses are a group of four paired air-filled spaces that surround the nasal cavity (maxillary sinuses), above the eyes (frontal sinuses), between the eyes (ethmoid sinuses), and behind the ethmoids (sphenoid sinuses).",
+  "label": 0,
+  "p": 0.0241,
+  "verdict": "Likely Human",
+  "conf": 0.6281,
+  "n": 33,
+  "style": {
+   "sent_len_mean": 32.0,
+   "sent_len_std": 0.0,
+   "type_token_ratio": 0.75,
+   "hapax_ratio": 0.6562,
+   "avg_word_len": 5.4375,
+   "stopword_ratio": 0.3438,
+   "punct_density": 0.057,
+   "commas_per_sent": 3.0,
+   "noun_ratio": 0.2667,
+   "verb_ratio": 0.0444,
+   "adj_ratio": 0.1556,
+   "adv_ratio": 0.0,
+   "pron_ratio": 0.0
+  }
+ },
+ "sinus_c": {
+  "text": "The facial sinuses are air-filled cavities located within the bones of the face. There are four main pairs of facial sinuses: The maxillary sinuses, which are located in the cheekbones. The frontal sinuses, which are located in the forehead. The ethmoid sinuses, which are located between the eyes.",
+  "label": 1,
+  "p": 0.9652,
+  "verdict": "Likely AI",
+  "conf": 0.8932,
+  "n": 48,
+  "style": {
+   "sent_len_mean": 11.75,
+   "sent_len_std": 3.2692,
+   "type_token_ratio": 0.4894,
+   "hapax_ratio": 0.3191,
+   "avg_word_len": 4.9574,
+   "stopword_ratio": 0.4894,
+   "punct_density": 0.0302,
+   "commas_per_sent": 0.75,
+   "noun_ratio": 0.2143,
+   "verb_ratio": 0.1607,
+   "adj_ratio": 0.125,
+   "adv_ratio": 0.0,
+   "pron_ratio": 0.0
+  }
+ },
+ "divo_h": {
+  "text": "Il Divo is a group of four male singers: French pop singer S\u00e9bastien Izambard, Spanish baritone Carlos Mar\u00edn, American tenor David Miller, and Swiss tenor Urs B\u00fchler.",
+  "label": 0,
+  "p": 0.0399,
+  "verdict": "Likely Human",
+  "conf": 0.4969,
+  "n": 27,
+  "style": {
+   "sent_len_mean": 27.0,
+   "sent_len_std": 0.0,
+   "type_token_ratio": 0.963,
+   "hapax_ratio": 0.9259,
+   "avg_word_len": 5.0,
+   "stopword_ratio": 0.1481,
+   "punct_density": 0.0301,
+   "commas_per_sent": 3.0,
+   "noun_ratio": 0.625,
+   "verb_ratio": 0.0312,
+   "adj_ratio": 0.0625,
+   "adv_ratio": 0.0,
+   "pron_ratio": 0.0
+  }
+ },
+ "divo_c": {
+  "text": "The members of the group Il Divo are Carlos Mar\u00edn, Urs B\u00fchler, S\u00e9bastien Izambard, and David Miller. Il Divo is a multinational operatic pop group formed in 2003 by music manager Simon Cowell. The group has released several albums and has toured internationally, performing in a variety of languages including English, Spanish, French, and Italian.",
+  "label": 1,
+  "p": 0.976,
+  "verdict": "Likely AI",
+  "conf": 0.952,
+  "n": 55,
+  "style": {
+   "sent_len_mean": 18.0,
+   "sent_len_std": 2.9439,
+   "type_token_ratio": 0.7778,
+   "hapax_ratio": 0.6111,
+   "avg_word_len": 5.1852,
+   "stopword_ratio": 0.3148,
+   "punct_density": 0.0287,
+   "commas_per_sent": 2.3333,
+   "noun_ratio": 0.4154,
+   "verb_ratio": 0.1385,
+   "adj_ratio": 0.0615,
+   "adv_ratio": 0.0154,
+   "pron_ratio": 0.0
+  }
+ }
+}

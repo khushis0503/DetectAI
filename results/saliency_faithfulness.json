@@ -1,0 +1,20 @@
+{
+  "bert": {
+    "model": "Fine-tuned BERT (bert-base-uncased)",
+    "method": "Gradient x Input (BERT)",
+    "k_words_deleted": 5,
+    "n_texts": 147,
+    "mean_logodds_drop_top5_words": 0.2905,
+    "mean_logodds_drop_random5_words": -0.1288,
+    "share_where_top5_beats_random": 0.5578
+  },
+  "tfidf_lr": {
+    "model": "TF-IDF + Logistic Regression (baseline)",
+    "method": "LR coefficient x TF-IDF",
+    "k_words_deleted": 5,
+    "n_texts": 140,
+    "mean_logodds_drop_top5_words": 0.971,
+    "mean_logodds_drop_random5_words": 0.0403,
+    "share_where_top5_beats_random": 1.0
+  }
+}

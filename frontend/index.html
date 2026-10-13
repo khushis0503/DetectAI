@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DetectAI</title>
+  <meta name="description" content="Explainable detection of AI-generated text">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c2b4a'/%3E%3Ccircle cx='14' cy='14' r='7' fill='none' stroke='%23eb6834' stroke-width='3'/%3E%3Cpath d='M19 19l6 6' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#1c2b4a"/>
+          <circle cx="14" cy="14" r="7" fill="none" stroke="#eb6834" stroke-width="3"/>
+          <path d="M19 19l6 6" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="brand-name">DetectAI</div>
+          <div class="brand-tag">Explainable detection of AI-generated text</div>
+        </div>
+      </div>
+      <div class="model-badge" id="modelBadge">Loading model…</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- ================= INPUT ================= -->
+    <section class="card input-card" aria-labelledby="inputTitle">
+      <div class="card-head">
+        <h2 id="inputTitle">Paste or type a text</h2>
+        <div class="samples" role="group" aria-label="Load a sample text">
+          <span class="samples-label">Try a sample:</span>
+          <button class="chip" data-sample="casual" type="button">Human · casual</button>
+          <button class="chip" data-sample="formal" type="button">Human · formal</button>
+          <button class="chip" data-sample="chatgpt" type="button">ChatGPT</button>
+        </div>
+      </div>
+      <textarea id="textInput" spellcheck="false"
+        placeholder="Paste an essay, an answer or a paragraph here (at least 5 words; 50+ words gives a more reliable result)…"></textarea>
+      <div class="input-foot">
+        <div class="counter" id="wordCounter">0 words</div>
+        <div class="actions">
+          <button class="btn btn-ghost" id="clearBtn" type="button">Clear</button>
+          <button class="btn btn-primary" id="analyzeBtn" type="button">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Analyze text</span>
+          </button>
+        </div>
+      </div>
+      <div class="alert alert-error" id="errorBox" role="alert" hidden></div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="results" aria-live="polite" hidden>
+      <div class="alert alert-warn" id="shortWarning" hidden>
+        <strong>Text is short — result is less reliable.</strong>
+        <span id="shortWarningDetail"></span>
+      </div>
+
+      <div class="grid-verdict" id="verdictGrid">
+        <div class="card verdict-card" id="verdictCard">
+          <div class="eyebrow">Verdict</div>
+          <div class="verdict" id="verdictText">—</div>
+          <div class="verdict-sub" id="verdictSub"></div>
+          <dl class="facts">
+            <div><dt>AI probability</dt><dd id="probText">—</dd></div>
+            <div><dt>Confidence</dt><dd id="confText">—</dd></div>
+            <div><dt>Words</dt><dd id="wordsText">—</dd></div>
+          </dl>
+          <div class="conf-track" aria-hidden="true"><div class="conf-fill" id="confFill"></div></div>
+          <p class="model-used" id="modelUsed"></p>
+          <p class="disclaimer">This tool gives a probability, not proof. Do not use it as the only basis for academic decisions.</p>
+        </div>
+
+        <div class="card gauge-card">
+          <div class="eyebrow">AI probability</div>
+          <svg id="gauge" viewBox="0 0 320 190" role="img" aria-label="AI probability gauge"></svg>
+          <div class="gauge-legend">
+            <span><i class="sw sw-human"></i>Likely Human</span>
+            <span><i class="sw sw-unc"></i>Uncertain</span>
+            <span><i class="sw sw-ai"></i>Likely AI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="evidenceCard">
+        <div class="card-head">
+          <h2>Why? Word-level evidence</h2>
+          <div class="legend-scale">
+            <span>towards <b class="t-human">Human</b></span>
+            <span class="scale-bar" aria-hidden="true"></span>
+            <span>towards <b class="t-ai">AI</b></span>
+          </div>
+        </div>
+        <p class="hint" id="highlightMethod"></p>
+        <div class="highlighted" id="highlighted"></div>
+      </div>
+
+      <div class="card" id="breakdownCard" hidden>
+        <h2>Paragraph breakdown</h2>
+        <p class="hint">Each part is scored on its own — useful when only part of a text was AI-generated.</p>
+        <div id="breakdown" class="bars"></div>
+      </div>
+
+      <div class="grid-two" id="detailsGrid">
+        <div class="card" id="sentencesCard">
+          <h2>Sentence by sentence</h2>
+          <p class="hint">AI probability for each sentence on its own. Single sentences carry little evidence, so treat these as hints.</p>
+          <div id="sentences" class="bars"></div>
+        </div>
+        <div class="card" id="styleCard">
+          <h2>Writing style</h2>
+          <p class="hint">This text (●) compared with typical
+            <b class="t-human">human</b> and <b class="t-ai">AI</b> texts in our training data.</p>
+          <div id="stylePanel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="card how" aria-labelledby="howTitle">
+      <h2 id="howTitle">How it works</h2>
+      <ol class="steps">
+        <li><span class="step-n">1</span><div><h3>Clean</h3><p>Unicode, links, HTML and formatting are normalised — the same cleaning used on the 8,895 training texts (essays, stories, news and Q&amp;A answers).</p></div></li>
+        <li><span class="step-n">2</span><div><h3>Tokenize</h3><p>The text is split into tokens. BERT uses <b>WordPiece</b> sub-words (e.g. <i>unbelievably → un · ##bel · ##ie · ##va · ##bly</i>); the baseline uses words, lemmas and <b>TF-IDF</b> weights.</p></div></li>
+        <li><span class="step-n">3</span><div><h3>Classify</h3><p>A <b>Transformer (BERT)</b> reads each word in context with self-attention, or the baseline <b>Logistic Regression + SVM</b> scores word and character patterns. Output: the probability the text is AI-written.</p></div></li>
+        <li><span class="step-n">4</span><div><h3>Decide &amp; explain</h3><p>Thresholds set on validation data allow at most <b>5% of human texts</b> to be labelled “Likely AI”. Word colours show which words pushed the decision.</p></div></li>
+      </ol>
+      <div class="metrics-strip" id="metricsStrip"></div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p><b>DetectAI</b> · MSc Data Science &amp; Analytics, NLP project, Jain University · Khushi S, Akhila Vaidya, Kalpana</p>
+    <p>This tool gives a probability, not proof. Do not use it as the only basis for academic decisions.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

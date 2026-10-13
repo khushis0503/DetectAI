@@ -1,0 +1,26 @@
+# Python environment and caches
+venv/
+__pycache__/
+*.pyc
+
+# Raw corpora and Colab upload bundle (large, re-creatable)
+raw/
+colab_upload/
+
+# Archives and split model parts
+*.zip
+part_*
+
+# Fine-tuned BERT model (too large for GitHub; download it from GitHub Releases)
+backend/models/detectai-bert*/
+
+# Report documents (added separately)
+report/*.docx
+report/*.pdf
+report/~$*
+
+# Local notes
+PROJECT_GUIDE.md
+
+# Model release archive
+release/
