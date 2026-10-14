@@ -13,9 +13,6 @@ Paste a text into the web page and you get:
 
 > This tool gives a probability, not proof. Do not use it as the only basis for academic decisions.
 
-**Project report:** [report/DetectAI_Report_final.pdf](report/DetectAI_Report_final.pdf)
-**Code walk-through:** [docs/CODE_EXPLAINED.md](docs/CODE_EXPLAINED.md)
-
 ![The same content analysed three times: own text (Likely Human, 2%), AI-written version (Uncertain, 85%), ChatGPT rewrite (Likely AI, 97%)](report/final_figures/s_three_verdicts.png)
 
 ---
@@ -62,7 +59,6 @@ DetectAI/
 ├── notebooks/                   ← Colab notebook for BERT fine-tuning (+ executed copy with outputs)
 ├── data/                        ← final dataset, augmented texts, score caches
 ├── results/                     ← metrics (JSON), misclassified examples, figures/
-├── docs/CODE_EXPLAINED.md       ← every file explained in plain language
 └── report/                      ← report figures and screenshots
 ```
 
@@ -164,13 +160,3 @@ venv\Scripts\python scripts\saliency_check.py
 | GET | `/api/model-info` | model name, thresholds, temperature, test-set metrics |
 
 Input rules: 5–3,000 words; under 50 words the result carries a "less reliable" warning and reduced confidence.
-
----
-
-## Team
-
-- **Khushi S** — Project Lead and Developer
-- **Akhila Vaidya**
-- **Kalpana**
-
-MSc Data Science and Analytics, School of Sciences, Jain University, Bengaluru — October 2026.
