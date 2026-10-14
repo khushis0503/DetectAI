@@ -163,3 +163,6 @@ Input rules: 5–3,000 words; under 50 words the result carries a "less reliable
 
 ## Team 02
 Khushi S, Akhila, Kalpana
+
+## License
+Code released under the MIT License, see LICENSE. The Ghostbuster and HC3 datasets keep their original licences.
