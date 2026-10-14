@@ -160,3 +160,6 @@ venv\Scripts\python scripts\saliency_check.py
 | GET | `/api/model-info` | model name, thresholds, temperature, test-set metrics |
 
 Input rules: 5–3,000 words; under 50 words the result carries a "less reliable" warning and reduced confidence.
+
+## Team 02
+Khushi S, Akhila, Kalpana
